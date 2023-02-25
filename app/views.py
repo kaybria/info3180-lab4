@@ -80,7 +80,8 @@ def get_uploaded_images():
     filenames= []
     for subdir, dirs, files in os.walk(rootdir + '/uploads'):
         for file in files:
-            filenames.append(file)
+            if file.endswith('.png') or file.endswith('.jpg'):
+                filenames.append(file)
     return filenames
 @app.route('/uploads/<filename>')
 def get_image(filename):

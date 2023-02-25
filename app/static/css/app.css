@@ -18,3 +18,17 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+.listofpics li{
+ list-style-type: none;
+}
+.listofpics{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    
+}
+img{
+    width: 400px;
+    height: 350px;
+    padding:5px;
+}
