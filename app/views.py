@@ -87,7 +87,7 @@ def get_uploaded_images():
 @login_required
 def logout():
     logout_user()
-    flash('You have been locked out', 'success')
+    flash('You have been logged out', 'success')
     return redirect(url_for("home"))
 
 @app.route('/uploads/<filename>')
