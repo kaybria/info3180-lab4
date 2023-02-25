@@ -83,6 +83,13 @@ def get_uploaded_images():
             if file.endswith('.png') or file.endswith('.jpg'):
                 filenames.append(file)
     return filenames
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('You have been locked out', 'success')
+    return redirect(url_for("home"))
+
 @app.route('/uploads/<filename>')
 def get_image(filename):
     return send_from_directory(os.path.join(os.getcwd(),app.config['UPLOAD_FOLDER']), filename)
